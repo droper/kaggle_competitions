@@ -100,7 +100,8 @@ classes = train["cuisine"]
 
 
 # CountVector for vectorize the data
-count_vect = CountVectorizer(ngram_range=(1, 2))
+# Use one word ngram and two word ngrams in the vectorizer
+count_vect = CountVectorizer(ngram_range=(1, 2), strip_accents='unicode')
 
 # Preprocessing the training data
 train_ingredients = lowercase(train_ingredients)
